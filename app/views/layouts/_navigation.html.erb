@@ -1,26 +1,35 @@
-<%= link_to "Basic Site", root_path, :class => 'brand' %>
-<ul class="nav">
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Login', new_user_session_path %>  
-    </li>
-  <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit account', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-      <%= link_to 'Admin', users_path %>
-      </li>
-    <% end %>
-  <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+	<div class="span5">
+		<%= link_to "Geneva Equestrian", root_path, :class => 'brand' %>
+	</div>
+	<div class="span3">
+		&nbsp;
+	</div>
+	<div class="span4">
+		<ul class="nav">
+		  <% if user_signed_in? %>
+		    <li>
+		    <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        
+		    </li>
+		  <% else %>
+		    <li>
+		    <%= link_to 'Login', new_user_session_path %>  
+		    </li>
+		  <% end %>
+		  <% if user_signed_in? %>
+		    <li>
+		    <%= link_to 'Edit account', edit_user_registration_path %>
+		    </li>
+		    <% if current_user.has_role? :admin %>
+		      <li>
+		      <%= link_to 'Admin', users_path %>
+		      </li>
+		    <% end %>
+		  <% else %>
+		    <li>
+		    <%= link_to 'Sign up', new_user_registration_path %>
+		    </li>
+		  <% end %>
+		</ul>
+	</div>
+</div>	
